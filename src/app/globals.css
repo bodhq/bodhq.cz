@@ -1,8 +1,57 @@
+:root {
+  /* Product UI tokens from bod/core/ui/styles/tokens.css. */
+  --theme-surface-0: #f6f7f9;
+  --color-text-primary: #202329;
+  --color-text-secondary: #606672;
+  --bod-type-body: 0.9375rem;
+  --section-gap: 24px;
+  color-scheme: light;
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--theme-surface-0);
+  color: var(--color-text-primary);
+  font-size: var(--bod-type-body);
+  line-height: 1.55;
+}
+
+main {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--section-gap);
+  padding: var(--section-gap);
+  text-align: center;
+}
+
+.logo {
+  width: 64px;
+  aspect-ratio: 269 / 160;
+  background: currentColor;
+  mask: url("/brand/logo.svg") center / contain no-repeat;
+}
+
+h1 {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--bod-type-body);
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-surface-0: #101216;
+    --color-text-primary: #edf0f5;
+    --color-text-secondary: #a4acba;
+    color-scheme: dark;
+  }
 }
